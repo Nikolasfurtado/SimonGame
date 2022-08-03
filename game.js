@@ -8,32 +8,26 @@ gamePattern.push(choosenColor);
 function nextSequence() {
 
     randomSeq = Math.floor(Math.random() * 4);
-    /*  switch (randomSeq) {
-         case 4:
-             randomSeq = 0
-             break;
-         case 5:
-             randomSeq = 1
-             break;
-         case 6:
-             randomSeq = 2
-             break;
-         case 7:
-             randomSeq = 3
-             break;
-
-         case 8:
-             randomSeq = 0
-             break;
-         case 9:
-             randomSeq = 1
-             break;
-
-         default:
-             randomSeq;
-             break;
-     }
-     return randomSeq; */
+    return randomSeq;
 }
 
-console.log(randomSeq);
+$("#" + choosenColor).addClass("pressed")
+setTimeout(() => {
+    $("#" + choosenColor).removeClass("pressed")
+}, 100);
+
+//sounds core
+
+var sdb = new Audio("sounds/blue.mp3");
+var sdg = new Audio("sounds/green.mp3");
+var sdr = new Audio("sounds/red.mp3");
+var sdy = new Audio("sounds/yellow.mp3");
+var sdwrong = new Audio("sounds/wrong.mp3");
+//get buttons clicked
+
+$("button").on("click", function() {
+
+
+
+});
+console.log(sdy);
