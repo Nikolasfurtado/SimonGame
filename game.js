@@ -1,9 +1,14 @@
 //document.addEventListener("onload", nextSequence)
-var gamePattern = [];
+
 var randomSeq;
 var btnClrs = ["red", "blue", "green", "yellow"];
 var choosenColor = btnClrs[nextSequence()];
+
+var gamePattern = [];
 gamePattern.push(choosenColor);
+
+var userClickedPattern = [];
+
 
 function nextSequence() {
 
@@ -24,10 +29,34 @@ var sdr = new Audio("sounds/red.mp3");
 var sdy = new Audio("sounds/yellow.mp3");
 var sdwrong = new Audio("sounds/wrong.mp3");
 //get buttons clicked
+var userChosenColour;
+$(".btn").on("click", function() {
 
-$("button").on("click", function() {
+    userChosenColour = this.id;
+    userClickedPattern.push(userChosenColour);
 
+    switch (userChosenColour) {
+        case "blue":
+            sdb.play();
+            break;
+        case "green":
+            sdg.play();
+            break;
+        case "red":
+            sdr.play();
+            break;
+        case "yellow":
+            sdy.play();
+            break;
+        default:
+            sdwrong.play();
+            break;
+    }
 
 
 });
-console.log(sdy);
+
+/* $(".btn").click(function() {
+    alert(this.id);
+}); */
+console.log(userChosenColour);
